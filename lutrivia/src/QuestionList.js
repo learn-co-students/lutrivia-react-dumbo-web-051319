@@ -8,7 +8,7 @@ class QuestionList extends React.Component {
     let i = 0;
     return this.props.questions.map((question) => {
       i += 1;
-      return <Question key={i} text={question.text} answer={question.answer} score={this.props.score}/>;
+      return <Question key={i} text={question.text} answer={question.answer} score={this.props.score} scoreInput={this.props.scoreInput}/>;
     });
   }
 

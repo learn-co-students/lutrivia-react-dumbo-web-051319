@@ -14,12 +14,14 @@ class Question extends React.Component {
 
   checkAnswerTrue = () => {
     // console.log(this.props.answer)
-    if (this.props.answer === true) {
+    if(this.props.answer === true) {
       // debugger
-      this.setState({
-        classTrue: "true"
-      })
-      this.props.score()
+      if(this.state.classTrue === "unclicked") {
+        this.setState({
+          classTrue: "true"
+        })
+        this.props.score()
+      }
     } else {
       this.setState({
         classTrue: "false"
@@ -30,11 +32,15 @@ class Question extends React.Component {
   checkAnswerFalse = () => {
     // console.log(this.props.answer)
     if (this.props.answer === false) {
+
+
+    if(this.state.classTrue === "unclicked") {
       this.setState({
         classFalse: "true"
       })
       this.props.score()
-    } else {
+      // this.props.scoreInput()
+    }} else {
       this.setState({
         classFalse: "false"
       })

@@ -7,7 +7,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      score: 0
+      score: 0,
     }
   }
 
@@ -18,6 +18,16 @@ class App extends React.Component {
     this.setState({
       score: score
     })
+    // this.updateScoreInput()
+  }
+
+  returnScore = () => {
+    // debugger
+    return this.state.score
+  }
+
+  refresh = () => {
+    window.location.reload()
   }
 
   render() {
@@ -27,10 +37,10 @@ class App extends React.Component {
     return (
       <div>
         <h1>Lutrivia</h1>
-        <button>New Game</button>
+        <button onClick={this.refresh} Page>New Game</button>
         <h3>Score: {this.state.score}</h3>
         <QuestionList score={this.updateScore} questions={questions}/>
-        <SubmitScore defaultValue={this.state.score}/>
+        <SubmitScore score={this.state.score}/>
       </div>
     );
   }
