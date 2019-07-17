@@ -1,0 +1,20 @@
+button {
+  border-style: solid;
+  border-width: 1px;
+  /* border-color: red; */
+}
+
+.true {
+  border-color: green;
+}
+
+.false {
+  border-color: red;
+}
+
+#score-input {
+  color: grey;
+  padding-left: 1vw;
+  border-style: solid;
+  border-width: 1px;
+}

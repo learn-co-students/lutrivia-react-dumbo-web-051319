@@ -15,4 +15,6 @@ Good luck. When you are finished, jump back on labs!
 ## Component hierarchy
 
 - App
-  - ???
+  - QuestionList
+    - Question
+  - Submit Score
