@@ -3,20 +3,22 @@ import Question from './Question'
 
 class QuestionList extends React.Component {
 
+  makeList = () => {
+    // console.log(this)
+    let i = 0;
+    return this.props.questions.map((question) => {
+      i += 1;
+      return <Question key={i} text={question.text} answer={question.answer} score={this.props.score}/>;
+    });
+  }
 
   render() {
-    let i = 0;
-    const makeList = () => {
-      return this.props.questions.map((question) => {
-        i += 1;
-        return <Question key={i} text={question.text} answer={question.answer}/>;
-      });
-    }
+    // console.log(this)
 
     return (
       <div>
         <ul>
-          {makeList()}
+          {this.makeList()}
         </ul>
       </div>
     );

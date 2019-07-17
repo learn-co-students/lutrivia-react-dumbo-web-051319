@@ -4,8 +4,7 @@ class Question extends React.Component {
 
   constructor(props) {
     super(props)
-    console.log(props)
-    console.log(this)
+    // console.log(props)
     this.state = {
       classTrue: "unclicked",
       classFalse: "unclicked"
@@ -16,12 +15,12 @@ class Question extends React.Component {
   checkAnswerTrue = () => {
     // console.log(this.props.answer)
     if (this.props.answer === true) {
-      alert("You're right!")
       // debugger
       this.setState({
         classTrue: "true"
-      })} else {
-      alert("You're wrong.")
+      })
+      this.props.score()
+    } else {
       this.setState({
         classTrue: "false"
       })
@@ -31,11 +30,11 @@ class Question extends React.Component {
   checkAnswerFalse = () => {
     // console.log(this.props.answer)
     if (this.props.answer === false) {
-      alert("You're right!")
       this.setState({
         classFalse: "true"
-      })} else {
-      alert("You're wrong.")
+      })
+      this.props.score()
+    } else {
       this.setState({
         classFalse: "false"
       })
@@ -44,7 +43,6 @@ class Question extends React.Component {
 
   render() {
     // debugger;
-    // console.log(this)
     return (
       <li answer={this.props.answer.toString()}>
         {this.props.text}
