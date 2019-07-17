@@ -1,0 +1,18 @@
+button {
+  border-style: solid;
+  border-width: 1px;
+  /* border-color: red; */
+}
+
+input {
+  border-style: solid;
+  border-width: 1px;
+}
+
+.true {
+  border-color: green;
+}
+
+.false {
+  border-color: red;
+}

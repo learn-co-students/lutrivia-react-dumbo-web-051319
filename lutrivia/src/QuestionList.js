@@ -5,11 +5,11 @@ class QuestionList extends React.Component {
 
 
   render() {
+    let i = 0;
     const makeList = () => {
-      // console.log(this.props.questions)
       return this.props.questions.map((question) => {
-        return <Question text={question.text}/>
-        // debugger;
+        i += 1;
+        return <Question key={i} text={question.text} answer={question.answer}/>;
       });
     }
 
